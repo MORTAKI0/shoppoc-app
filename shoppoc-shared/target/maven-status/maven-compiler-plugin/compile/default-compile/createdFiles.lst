@@ -1,0 +1,6 @@
+com\shoppoc\shared\money\Money.class
+com\shoppoc\shared\error\DomainError.class
+com\shoppoc\shared\event\DomainEvent.class
+com\shoppoc\shared\error\BusinessException.class
+com\shoppoc\shared\error\NotFoundException.class
+com\shoppoc\shared\error\ApiErrorResponse.class
