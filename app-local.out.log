@@ -1,0 +1,144 @@
+[INFO] Scanning for projects...
+Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/boot/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/flywaydb/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/pl/project13/maven/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/johnzon/maven-metadata.xml
+Progress (1): 249 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/boot/maven-metadata.xml (249 B at 109 B/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/jooq/maven-metadata.xml
+Progress (1): 234 BProgress (2): 234 B | 240 B                           Downloaded from central: https://repo.maven.apache.org/maven2/org/flywaydb/maven-metadata.xml (234 B at 100 B/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/maven-metadata.xml
+Progress (2): 240 B | 398 BProgress (3): 240 B | 398 B | 249 B                                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/johnzon/maven-metadata.xml (240 B at 101 B/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/liquibase/maven-metadata.xml
+Downloaded from central: https://repo.maven.apache.org/maven2/org/jooq/maven-metadata.xml (398 B at 4.9 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/pl/project13/maven/maven-metadata.xml (249 B at 105 B/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml
+Progress (1): 375 BProgress (2): 375 B | 394 B                           Downloaded from central: https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/maven-metadata.xml (375 B at 4.8 kB/s)
+Progress (2): 394 B | 3.1 kBProgress (2): 394 B | 7.7 kBProgress (2): 394 B | 12 kB Progress (2): 394 B | 17 kBProgress (2): 394 B | 20 kBProgress (2): 394 B | 21 kBProgress (3): 394 B | 21 kB | 4.6 kBProgress (3): 394 B | 21 kB | 9.7 kBProgress (3): 394 B | 21 kB | 14 kB                                    Downloaded from central: https://repo.maven.apache.org/maven2/org/liquibase/maven-metadata.xml (394 B at 4.9 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml (14 kB at 140 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml (21 kB at 132 kB/s)
+[INFO] 
+[INFO] ----------------------< com.shoppoc:shoppoc-app >-----------------------
+[INFO] Building shoppoc-app 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:2.7.18:run (default-cli) > test-compile @ shoppoc-app >>>
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ shoppoc-app ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 3 resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ shoppoc-app ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ shoppoc-app ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ shoppoc-app ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< spring-boot:2.7.18:run (default-cli) < test-compile @ shoppoc-app <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:2.7.18:run (default-cli) @ shoppoc-app ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.18)
+
+2026-05-07 16:10:48.698  INFO 22656 --- [           main] com.shoppoc.app.ShopPocApplication       : Starting ShopPocApplication using Java 21.0.10 on EGAWILLDOIT with PID 22656 (C:\Users\abmor\Desktop\shopPoc\shoppoc-app\target\classes started by abmor in C:\Users\abmor\Desktop\shopPoc\shoppoc-app)
+2026-05-07 16:10:48.700  INFO 22656 --- [           main] com.shoppoc.app.ShopPocApplication       : The following 1 profile is active: "local"
+2026-05-07 16:10:49.673  INFO 22656 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-07 16:10:49.780  INFO 22656 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 96 ms. Found 3 JPA repository interfaces.
+2026-05-07 16:10:51.598  INFO 22656 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2026-05-07 16:10:51.613  INFO 22656 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-07 16:10:51.613  INFO 22656 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2026-05-07 16:10:51.899  INFO 22656 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-07 16:10:51.901  INFO 22656 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3132 ms
+2026-05-07 16:10:52.145  INFO 22656 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-07 16:10:52.610  INFO 22656 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-07 16:10:52.627  INFO 22656 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:shoppoc'
+2026-05-07 16:10:52.941  INFO 22656 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-07 16:10:53.048  INFO 22656 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2026-05-07 16:10:53.359  INFO 22656 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2026-05-07 16:10:53.574  INFO 22656 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+Hibernate: create table payments (id varchar(255) not null, amount numeric(19,2) not null, currency varchar(255) not null, processed_at timestamp not null, provider varchar(255) not null, reference varchar(255) not null, rejection_reason varchar(255), status varchar(255) not null, primary key (id))
+Hibernate: create table products (id varchar(255) not null, description varchar(2000), name varchar(255) not null, price_amount numeric(19,2) not null, price_currency varchar(3) not null, sku varchar(255) not null, status varchar(255) not null, stock_quantity integer not null, primary key (id))
+Hibernate: create table user_roles (user_id varchar(255) not null, role varchar(255))
+Hibernate: create table users (id varchar(255) not null, created_at timestamp not null, email varchar(255) not null, password_hash varchar(255) not null, status varchar(255) not null, primary key (id))
+Hibernate: alter table products drop constraint if exists UK_fhmd06dsmj6k0n90swsh8ie9g
+Hibernate: alter table products add constraint UK_fhmd06dsmj6k0n90swsh8ie9g unique (sku)
+Hibernate: alter table users drop constraint if exists UK_6dotkott2kjsp8vw4d0m25fb7
+Hibernate: alter table users add constraint UK_6dotkott2kjsp8vw4d0m25fb7 unique (email)
+Hibernate: alter table user_roles add constraint FKhfh9dx7w3ubf1co1vdev94g3f foreign key (user_id) references users
+2026-05-07 16:10:54.610  INFO 22656 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2026-05-07 16:10:54.625  INFO 22656 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-07 16:10:55.523  INFO 22656 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@65b1693c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@9a74a93, org.springframework.security.web.context.SecurityContextPersistenceFilter@64f49b3, org.springframework.security.web.header.HeaderWriterFilter@6d01f2e5, org.springframework.security.web.authentication.logout.LogoutFilter@549404e7, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4dd425dc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@70869678, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@51eafec0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@255d4d7, org.springframework.security.web.session.SessionManagementFilter@775a5a67, org.springframework.security.web.access.ExceptionTranslationFilter@6167a456, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6f071d0c]
+2026-05-07 16:10:56.208  INFO 22656 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2026-05-07 16:10:56.305  INFO 22656 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2026-05-07 16:10:56.322  INFO 22656 --- [           main] com.shoppoc.app.ShopPocApplication       : Started ShopPocApplication in 8.202 seconds (JVM running for 8.705)
+Hibernate: select jpauserent0_.id as id1_3_, jpauserent0_.created_at as created_2_3_, jpauserent0_.email as email3_3_, jpauserent0_.password_hash as password4_3_, jpauserent0_.status as status5_3_ from users jpauserent0_ where jpauserent0_.email=?
+Hibernate: select jpauserent0_.id as id1_3_0_, jpauserent0_.created_at as created_2_3_0_, jpauserent0_.email as email3_3_0_, jpauserent0_.password_hash as password4_3_0_, jpauserent0_.status as status5_3_0_ from users jpauserent0_ where jpauserent0_.id=?
+Hibernate: insert into users (created_at, email, password_hash, status, id) values (?, ?, ?, ?, ?)
+Hibernate: insert into user_roles (user_id, role) values (?, ?)
+Hibernate: select jpauserent0_.id as id1_3_, jpauserent0_.created_at as created_2_3_, jpauserent0_.email as email3_3_, jpauserent0_.password_hash as password4_3_, jpauserent0_.status as status5_3_ from users jpauserent0_ where jpauserent0_.email=?
+Hibernate: select jpauserent0_.id as id1_3_0_, jpauserent0_.created_at as created_2_3_0_, jpauserent0_.email as email3_3_0_, jpauserent0_.password_hash as password4_3_0_, jpauserent0_.status as status5_3_0_ from users jpauserent0_ where jpauserent0_.id=?
+Hibernate: insert into users (created_at, email, password_hash, status, id) values (?, ?, ?, ?, ?)
+Hibernate: insert into user_roles (user_id, role) values (?, ?)
+Hibernate: select jpaproduct0_.id as id1_1_, jpaproduct0_.description as descript2_1_, jpaproduct0_.name as name3_1_, jpaproduct0_.price_amount as price_am4_1_, jpaproduct0_.price_currency as price_cu5_1_, jpaproduct0_.sku as sku6_1_, jpaproduct0_.status as status7_1_, jpaproduct0_.stock_quantity as stock_qu8_1_ from products jpaproduct0_ where jpaproduct0_.sku=?
+Hibernate: select jpaproduct0_.id as id1_1_0_, jpaproduct0_.description as descript2_1_0_, jpaproduct0_.name as name3_1_0_, jpaproduct0_.price_amount as price_am4_1_0_, jpaproduct0_.price_currency as price_cu5_1_0_, jpaproduct0_.sku as sku6_1_0_, jpaproduct0_.status as status7_1_0_, jpaproduct0_.stock_quantity as stock_qu8_1_0_ from products jpaproduct0_ where jpaproduct0_.id=?
+Hibernate: insert into products (description, name, price_amount, price_currency, sku, status, stock_quantity, id) values (?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select jpaproduct0_.id as id1_1_, jpaproduct0_.description as descript2_1_, jpaproduct0_.name as name3_1_, jpaproduct0_.price_amount as price_am4_1_, jpaproduct0_.price_currency as price_cu5_1_, jpaproduct0_.sku as sku6_1_, jpaproduct0_.status as status7_1_, jpaproduct0_.stock_quantity as stock_qu8_1_ from products jpaproduct0_ where jpaproduct0_.sku=?
+Hibernate: select jpaproduct0_.id as id1_1_0_, jpaproduct0_.description as descript2_1_0_, jpaproduct0_.name as name3_1_0_, jpaproduct0_.price_amount as price_am4_1_0_, jpaproduct0_.price_currency as price_cu5_1_0_, jpaproduct0_.sku as sku6_1_0_, jpaproduct0_.status as status7_1_0_, jpaproduct0_.stock_quantity as stock_qu8_1_0_ from products jpaproduct0_ where jpaproduct0_.id=?
+Hibernate: insert into products (description, name, price_amount, price_currency, sku, status, stock_quantity, id) values (?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select jpaproduct0_.id as id1_1_, jpaproduct0_.description as descript2_1_, jpaproduct0_.name as name3_1_, jpaproduct0_.price_amount as price_am4_1_, jpaproduct0_.price_currency as price_cu5_1_, jpaproduct0_.sku as sku6_1_, jpaproduct0_.status as status7_1_, jpaproduct0_.stock_quantity as stock_qu8_1_ from products jpaproduct0_ where jpaproduct0_.sku=?
+Hibernate: select jpaproduct0_.id as id1_1_0_, jpaproduct0_.description as descript2_1_0_, jpaproduct0_.name as name3_1_0_, jpaproduct0_.price_amount as price_am4_1_0_, jpaproduct0_.price_currency as price_cu5_1_0_, jpaproduct0_.sku as sku6_1_0_, jpaproduct0_.status as status7_1_0_, jpaproduct0_.stock_quantity as stock_qu8_1_0_ from products jpaproduct0_ where jpaproduct0_.id=?
+Hibernate: insert into products (description, name, price_amount, price_currency, sku, status, stock_quantity, id) values (?, ?, ?, ?, ?, ?, ?, ?)
+2026-05-07 16:11:09.335  INFO 22656 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-07 16:11:09.335  INFO 22656 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-07 16:11:09.335  INFO 22656 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+Hibernate: select jpauserent0_.id as id1_3_, jpauserent0_.created_at as created_2_3_, jpauserent0_.email as email3_3_, jpauserent0_.password_hash as password4_3_, jpauserent0_.status as status5_3_ from users jpauserent0_ where jpauserent0_.email=?
+Hibernate: select roles0_.user_id as user_id1_2_0_, roles0_.role as role2_2_0_ from user_roles roles0_ where roles0_.user_id=?
+Hibernate: select jpapayment0_.id as id1_0_0_, jpapayment0_.amount as amount2_0_0_, jpapayment0_.currency as currency3_0_0_, jpapayment0_.processed_at as processe4_0_0_, jpapayment0_.provider as provider5_0_0_, jpapayment0_.reference as referenc6_0_0_, jpapayment0_.rejection_reason as rejectio7_0_0_, jpapayment0_.status as status8_0_0_ from payments jpapayment0_ where jpapayment0_.id=?
+Hibernate: insert into payments (amount, currency, processed_at, provider, reference, rejection_reason, status, id) values (?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select jpauserent0_.id as id1_3_, jpauserent0_.created_at as created_2_3_, jpauserent0_.email as email3_3_, jpauserent0_.password_hash as password4_3_, jpauserent0_.status as status5_3_ from users jpauserent0_ where jpauserent0_.email=?
+Hibernate: select roles0_.user_id as user_id1_2_0_, roles0_.role as role2_2_0_ from user_roles roles0_ where roles0_.user_id=?
+Hibernate: select jpapayment0_.id as id1_0_0_, jpapayment0_.amount as amount2_0_0_, jpapayment0_.currency as currency3_0_0_, jpapayment0_.processed_at as processe4_0_0_, jpapayment0_.provider as provider5_0_0_, jpapayment0_.reference as referenc6_0_0_, jpapayment0_.rejection_reason as rejectio7_0_0_, jpapayment0_.status as status8_0_0_ from payments jpapayment0_ where jpapayment0_.id=?
+Hibernate: insert into payments (amount, currency, processed_at, provider, reference, rejection_reason, status, id) values (?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select jpauserent0_.id as id1_3_, jpauserent0_.created_at as created_2_3_, jpauserent0_.email as email3_3_, jpauserent0_.password_hash as password4_3_, jpauserent0_.status as status5_3_ from users jpauserent0_ where jpauserent0_.email=?
+Hibernate: select roles0_.user_id as user_id1_2_0_, roles0_.role as role2_2_0_ from user_roles roles0_ where roles0_.user_id=?
+Hibernate: select jpaproduct0_.id as id1_1_, jpaproduct0_.description as descript2_1_, jpaproduct0_.name as name3_1_, jpaproduct0_.price_amount as price_am4_1_, jpaproduct0_.price_currency as price_cu5_1_, jpaproduct0_.sku as sku6_1_, jpaproduct0_.status as status7_1_, jpaproduct0_.stock_quantity as stock_qu8_1_ from products jpaproduct0_ where jpaproduct0_.status=?
+Hibernate: select jpauserent0_.id as id1_3_, jpauserent0_.created_at as created_2_3_, jpauserent0_.email as email3_3_, jpauserent0_.password_hash as password4_3_, jpauserent0_.status as status5_3_ from users jpauserent0_ where jpauserent0_.email=?
+Hibernate: select roles0_.user_id as user_id1_2_0_, roles0_.role as role2_2_0_ from user_roles roles0_ where roles0_.user_id=?
+Hibernate: select jpauserent0_.id as id1_3_, jpauserent0_.created_at as created_2_3_, jpauserent0_.email as email3_3_, jpauserent0_.password_hash as password4_3_, jpauserent0_.status as status5_3_ from users jpauserent0_ where jpauserent0_.email=?
+Hibernate: select roles0_.user_id as user_id1_2_0_, roles0_.role as role2_2_0_ from user_roles roles0_ where roles0_.user_id=?
+Hibernate: select jpauserent0_.id as id1_3_, jpauserent0_.created_at as created_2_3_, jpauserent0_.email as email3_3_, jpauserent0_.password_hash as password4_3_, jpauserent0_.status as status5_3_ from users jpauserent0_ where jpauserent0_.email=?
+Hibernate: select roles0_.user_id as user_id1_2_0_, roles0_.role as role2_2_0_ from user_roles roles0_ where roles0_.user_id=?
+Hibernate: select jpapayment0_.id as id1_0_0_, jpapayment0_.amount as amount2_0_0_, jpapayment0_.currency as currency3_0_0_, jpapayment0_.processed_at as processe4_0_0_, jpapayment0_.provider as provider5_0_0_, jpapayment0_.reference as referenc6_0_0_, jpapayment0_.rejection_reason as rejectio7_0_0_, jpapayment0_.status as status8_0_0_ from payments jpapayment0_ where jpapayment0_.id=?
+Hibernate: insert into payments (amount, currency, processed_at, provider, reference, rejection_reason, status, id) values (?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select jpauserent0_.id as id1_3_, jpauserent0_.created_at as created_2_3_, jpauserent0_.email as email3_3_, jpauserent0_.password_hash as password4_3_, jpauserent0_.status as status5_3_ from users jpauserent0_ where jpauserent0_.email=?
+Hibernate: select roles0_.user_id as user_id1_2_0_, roles0_.role as role2_2_0_ from user_roles roles0_ where roles0_.user_id=?
+Hibernate: select jpapayment0_.id as id1_0_0_, jpapayment0_.amount as amount2_0_0_, jpapayment0_.currency as currency3_0_0_, jpapayment0_.processed_at as processe4_0_0_, jpapayment0_.provider as provider5_0_0_, jpapayment0_.reference as referenc6_0_0_, jpapayment0_.rejection_reason as rejectio7_0_0_, jpapayment0_.status as status8_0_0_ from payments jpapayment0_ where jpapayment0_.id=?
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  53.430 s
+[INFO] Finished at: 2026-05-07T16:11:32+01:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:2.7.18:run (default-cli) on project shoppoc-app: Application finished with exit code: -1 -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

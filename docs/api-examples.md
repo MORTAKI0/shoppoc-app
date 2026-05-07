@@ -40,10 +40,22 @@ curl.exe http://localhost:8080/api/v1/products
 curl.exe http://localhost:8080/api/v1/products/{productId}
 ```
 
-## Protected Endpoint with Basic Auth
+## Current User Profile (Authenticated)
 
 ```bash
-curl.exe -i http://localhost:8080/api/v1/users/me -u user@example.com:Password123!
+curl.exe -i http://localhost:8080/api/v1/users/me ^
+  -u user@example.com:Password123!
+```
+
+Expected `200 OK` body:
+
+```json
+{
+  "id": "f4967a97-4df0-4981-a4f7-0e19385fd43a",
+  "email": "user@example.com",
+  "roles": ["USER"],
+  "status": "ACTIVE"
+}
 ```
 
 ## Admin Product Creation (ADMIN Role Required)
@@ -58,6 +70,30 @@ curl.exe -i -X POST http://localhost:8080/api/v1/admin/products \
 Notes:
 
 - Protected endpoints use HTTP Basic auth for now.
+- `GET /api/v1/users/me` requires authentication.
+- Profile response never includes `password` or `passwordHash`.
 - Demo credentials only for local verification.
 - Seeded products are local demo data only.
 - No real credentials/secrets used.
+
+## Payment Authorization (Authenticated USER/ADMIN)
+
+```bash
+curl.exe -i -X POST "http://localhost:8080/api/v1/payments/authorize" -u "user@example.com:Password123!" -H "Content-Type: application/json" -d "{\"amount\":99.99,\"currency\":\"EUR\",\"orderReference\":\"ORDER-DEMO-001\",\"paymentMethodToken\":\"stub-ok\"}"
+```
+
+## Payment Authorization Rejected (Local Stub)
+
+```bash
+curl.exe -i -X POST "http://localhost:8080/api/v1/payments/authorize" -u "user@example.com:Password123!" -H "Content-Type: application/json" -d "{\"amount\":99.99,\"currency\":\"EUR\",\"orderReference\":\"ORDER-DEMO-002\",\"paymentMethodToken\":\"reject\"}"
+```
+
+## Get Payment Status (Authenticated USER/ADMIN)
+
+```bash
+curl.exe -i -u "user@example.com:Password123!" "http://localhost:8080/api/v1/payments/{paymentId}"
+```
+
+- Payment provider is local stub only.
+- No real payment provider calls.
+- No real card numbers stored or transmitted.

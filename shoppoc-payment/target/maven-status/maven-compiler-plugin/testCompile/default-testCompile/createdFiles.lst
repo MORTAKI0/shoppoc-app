@@ -1,0 +1,5 @@
+com\shoppoc\payment\application\PaymentApplicationServiceTest.class
+com\shoppoc\payment\application\PaymentApplicationServiceTest$InMemoryPaymentRepository.class
+com\shoppoc\payment\infrastructure\persistence\JpaPaymentRepositoryAdapterTest.class
+com\shoppoc\payment\domain\PaymentTest.class
+com\shoppoc\payment\PaymentTestApplication.class

@@ -1,4 +1,5 @@
 com\shoppoc\TestWebMvcApplication.class
+com\shoppoc\app\security\PaymentAccessIntegrationTest.class
 com\shoppoc\architecture\PackageBoundaryRulesTest.class
 com\shoppoc\catalog\infrastructure\web\ProductControllerTest.class
 com\shoppoc\app\security\SecurityAccessIntegrationTest.class
@@ -7,8 +8,10 @@ com\shoppoc\architecture\ModuleDependencyRulesTest.class
 com\shoppoc\catalog\CatalogLocalSeedDataTest.class
 com\shoppoc\app\ShopPocApplicationContextTest.class
 com\shoppoc\app\web\GlobalExceptionHandlerTest.class
+com\shoppoc\user\infrastructure\web\UserProfileControllerTest.class
 com\shoppoc\user\infrastructure\web\UserRegistrationControllerTest.class
 com\shoppoc\architecture\ControllerRulesTest$1.class
+com\shoppoc\payment\infrastructure\web\PaymentControllerTest.class
 com\shoppoc\app\web\GlobalExceptionHandlerTest$ValidateRequest.class
 com\shoppoc\architecture\ControllerRulesTest.class
 com\shoppoc\app\security\AuthControllerIntegrationTest.class

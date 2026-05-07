@@ -31,9 +31,10 @@ public class SecurityConfig {
                 .antMatchers(HttpMethod.POST, "/api/v1/auth/login").permitAll()
                 .antMatchers(HttpMethod.POST, "/api/v1/admin/products").hasRole("ADMIN")
                 .antMatchers("/api/v1/admin/**").hasRole("ADMIN")
-                .antMatchers("/api/v1/users/me").authenticated()
+                .antMatchers(HttpMethod.GET, "/api/v1/users/me").authenticated()
                 .antMatchers("/api/v1/orders/**").authenticated()
-                .antMatchers("/api/v1/payments/authorize").authenticated()
+                .antMatchers(HttpMethod.POST, "/api/v1/payments/authorize").hasAnyRole("USER", "ADMIN")
+                .antMatchers(HttpMethod.GET, "/api/v1/payments/**").hasAnyRole("USER", "ADMIN")
                 .anyRequest().authenticated()
             .and()
             .httpBasic();
