@@ -1,0 +1,4 @@
+com\shoppoc\order\application\OrderApplicationServiceTest.class
+com\shoppoc\order\infrastructure\persistence\JpaOrderRepositoryAdapterTest.class
+com\shoppoc\order\OrderTestApplication.class
+com\shoppoc\order\domain\OrderTest.class

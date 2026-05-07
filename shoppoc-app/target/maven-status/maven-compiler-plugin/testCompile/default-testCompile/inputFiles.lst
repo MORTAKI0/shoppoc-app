@@ -8,6 +8,7 @@ C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\architectur
 C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\catalog\infrastructure\web\AdminProductControllerTest.java
 C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\catalog\CatalogLocalSeedDataTest.java
 C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\app\security\PaymentAccessIntegrationTest.java
+C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\order\infrastructure\web\OrderControllerTest.java
 C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\TestWebMvcApplication.java
 C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\app\ShopPocApplicationContextTest.java
 C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\catalog\infrastructure\web\ProductControllerTest.java

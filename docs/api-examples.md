@@ -97,3 +97,30 @@ curl.exe -i -u "user@example.com:Password123!" "http://localhost:8080/api/v1/pay
 - Payment provider is local stub only.
 - No real payment provider calls.
 - No real card numbers stored or transmitted.
+
+## Create Order (Authenticated USER/ADMIN)
+
+1. Get product id:
+
+```bash
+curl.exe http://localhost:8080/api/v1/products
+```
+
+2. Create order:
+
+```bash
+curl.exe -i -X POST "http://localhost:8080/api/v1/orders" -u "user@example.com:Password123!" -H "Content-Type: application/json" -d "{\"lines\":[{\"productId\":\"{productIdFromCatalog}\",\"quantity\":2}]}"
+```
+
+Expected:
+
+- HTTP 201
+- `status` = `CREATED`
+- `totalAmount` calculated from unit price * quantity
+- lines include product `sku` and `productName`
+
+Notes:
+
+- Payment not connected yet in EGA-337.
+- Payment connection comes in EGA-338.
+- Endpoint requires USER or ADMIN auth.

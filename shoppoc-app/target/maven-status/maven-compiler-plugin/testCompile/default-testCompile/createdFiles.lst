@@ -1,6 +1,7 @@
 com\shoppoc\TestWebMvcApplication.class
 com\shoppoc\app\security\PaymentAccessIntegrationTest.class
 com\shoppoc\architecture\PackageBoundaryRulesTest.class
+com\shoppoc\order\infrastructure\web\OrderControllerTest.class
 com\shoppoc\catalog\infrastructure\web\ProductControllerTest.class
 com\shoppoc\app\security\SecurityAccessIntegrationTest.class
 com\shoppoc\app\web\GlobalExceptionHandlerTest$TestController.class
