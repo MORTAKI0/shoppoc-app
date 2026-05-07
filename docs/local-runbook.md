@@ -36,6 +36,13 @@ Expected:
 {"status":"UP"}
 ```
 
+## H2 Console (local profile)
+
+- URL: `http://localhost:8080/h2-console`
+- JDBC URL: `jdbc:h2:mem:shoppoc`
+- User: `sa`
+- Password: blank
+
 ## Troubleshooting
 
 - `invalid target release` or `class file has wrong version`:

@@ -1,21 +1,8 @@
 spring:
   application:
     name: shopPoc
-
-  datasource:
-    url: jdbc:h2:mem:shoppoc
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
-
   jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-
-  h2:
-    console:
-      enabled: true
+    open-in-view: false
 
 server:
   port: 8080
@@ -25,3 +12,13 @@ management:
     web:
       exposure:
         include: health,info
+
+shoppoc:
+  user:
+    enabled: true
+  catalog:
+    enabled: true
+  order:
+    enabled: true
+  payment:
+    provider: stub

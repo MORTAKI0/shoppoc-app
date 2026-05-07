@@ -1,0 +1,3 @@
+com\shoppoc\catalog\domain\ProductTest.class
+com\shoppoc\catalog\infrastructure\persistence\JpaProductRepositoryAdapterTest.class
+com\shoppoc\catalog\CatalogTestApplication.class

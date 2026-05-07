@@ -1,3 +1,10 @@
 com\shoppoc\app\web\GlobalExceptionHandlerTest$TestController.class
+com\shoppoc\TestWebMvcApplication.class
+com\shoppoc\architecture\ModuleDependencyRulesTest.class
+com\shoppoc\app\ShopPocApplicationContextTest.class
+com\shoppoc\architecture\PackageBoundaryRulesTest.class
 com\shoppoc\app\web\GlobalExceptionHandlerTest.class
+com\shoppoc\architecture\ControllerRulesTest$1.class
 com\shoppoc\app\web\GlobalExceptionHandlerTest$ValidateRequest.class
+com\shoppoc\architecture\ControllerRulesTest.class
+com\shoppoc\catalog\infrastructure\web\ProductControllerTest.class
