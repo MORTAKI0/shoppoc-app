@@ -1,6 +1,7 @@
 com\shoppoc\app\web\GlobalExceptionHandlerTest$TestController.class
 com\shoppoc\TestWebMvcApplication.class
 com\shoppoc\architecture\ModuleDependencyRulesTest.class
+com\shoppoc\catalog\CatalogLocalSeedDataTest.class
 com\shoppoc\app\ShopPocApplicationContextTest.class
 com\shoppoc\architecture\PackageBoundaryRulesTest.class
 com\shoppoc\app\web\GlobalExceptionHandlerTest.class

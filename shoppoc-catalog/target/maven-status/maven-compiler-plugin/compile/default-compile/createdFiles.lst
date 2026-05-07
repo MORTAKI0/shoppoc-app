@@ -7,6 +7,7 @@ com\shoppoc\catalog\infrastructure\persistence\JpaProductEntity.class
 com\shoppoc\catalog\domain\Product.class
 com\shoppoc\catalog\domain\ProductStatus.class
 com\shoppoc\catalog\domain\ProductRepository.class
+com\shoppoc\catalog\infrastructure\config\CatalogLocalDataSeeder.class
 com\shoppoc\catalog\application\CatalogApplicationService.class
 com\shoppoc\catalog\infrastructure\persistence\SpringDataProductRepository.class
 com\shoppoc\catalog\api\ProductDto.class

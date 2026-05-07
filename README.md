@@ -51,3 +51,7 @@ Expected response:
 - JDBC URL: `jdbc:h2:mem:shoppoc`
 - User: `sa`
 - Password: blank
+
+## API Examples
+
+- [Catalog curl examples](docs/api-examples.md)
