@@ -1,3 +1,5 @@
+com\shoppoc\catalog\application\CatalogApplicationServiceCreateProductTest$InMemoryProductRepository.class
+com\shoppoc\catalog\application\CatalogApplicationServiceCreateProductTest.class
 com\shoppoc\catalog\domain\ProductTest.class
 com\shoppoc\catalog\infrastructure\persistence\JpaProductRepositoryAdapterTest.class
 com\shoppoc\catalog\CatalogTestApplication.class

@@ -8,4 +8,8 @@ public interface ProductRepository {
     List<Product> findActiveProducts();
 
     Optional<Product> findById(ProductId id);
+
+    Optional<Product> findBySku(Sku sku);
+
+    Product save(Product product);
 }

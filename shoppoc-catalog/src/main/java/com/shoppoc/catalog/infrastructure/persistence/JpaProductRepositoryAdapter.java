@@ -33,6 +33,17 @@ public class JpaProductRepositoryAdapter implements ProductRepository {
         return springDataProductRepository.findById(id.toString()).map(this::toDomain);
     }
 
+    @Override
+    public Optional<Product> findBySku(Sku sku) {
+        return springDataProductRepository.findBySku(sku.getValue()).map(this::toDomain);
+    }
+
+    @Override
+    public Product save(Product product) {
+        JpaProductEntity saved = springDataProductRepository.save(toEntity(product));
+        return toDomain(saved);
+    }
+
     private Product toDomain(JpaProductEntity entity) {
         return new Product(
                 ProductId.fromString(entity.getId()),
@@ -42,6 +53,19 @@ public class JpaProductRepositoryAdapter implements ProductRepository {
                 Money.of(entity.getPriceAmount(), entity.getPriceCurrency()),
                 entity.getStockQuantity(),
                 entity.getStatus()
+        );
+    }
+
+    private JpaProductEntity toEntity(Product product) {
+        return new JpaProductEntity(
+                product.getId().toString(),
+                product.getSku().getValue(),
+                product.getName(),
+                product.getDescription(),
+                product.getPrice().getAmount(),
+                product.getPrice().getCurrency(),
+                product.getStockQuantity(),
+                product.getStatus()
         );
     }
 }

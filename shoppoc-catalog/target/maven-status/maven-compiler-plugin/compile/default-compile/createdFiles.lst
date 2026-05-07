@@ -1,5 +1,7 @@
+com\shoppoc\catalog\infrastructure\web\AdminProductController.class
 com\shoppoc\catalog\infrastructure\web\ProductController.class
 com\shoppoc\catalog\domain\ProductId.class
+com\shoppoc\catalog\infrastructure\web\CreateProductRequest.class
 com\shoppoc\catalog\api\ProductLookupPort.class
 com\shoppoc\catalog\infrastructure\config\CatalogModuleConfig.class
 com\shoppoc\catalog\application\CatalogApplicationService$1.class
@@ -12,5 +14,7 @@ com\shoppoc\catalog\application\CatalogApplicationService.class
 com\shoppoc\catalog\infrastructure\persistence\SpringDataProductRepository.class
 com\shoppoc\catalog\api\ProductDto.class
 com\shoppoc\catalog\infrastructure\web\ProductResponse.class
+com\shoppoc\catalog\application\CreateProductUseCase.class
 com\shoppoc\catalog\infrastructure\persistence\JpaProductRepositoryAdapter.class
+com\shoppoc\catalog\application\CreateProductCommand.class
 com\shoppoc\catalog\domain\Sku.class

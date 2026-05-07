@@ -4,6 +4,7 @@ import com.shoppoc.catalog.CatalogTestApplication;
 import com.shoppoc.catalog.domain.Product;
 import com.shoppoc.catalog.domain.ProductId;
 import com.shoppoc.catalog.domain.ProductStatus;
+import com.shoppoc.catalog.domain.Sku;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -76,5 +77,24 @@ class JpaProductRepositoryAdapterTest {
 
         assertTrue(product.isPresent());
         assertEquals("Product C", product.get().getName());
+    }
+
+    @Test
+    void saveAndFindBySkuWork() {
+        Product product = new Product(
+                ProductId.newId(),
+                Sku.of("sku-tt-1"),
+                "Keyboard",
+                "Mechanical",
+                com.shoppoc.shared.money.Money.of(new BigDecimal("120.00"), "USD"),
+                9,
+                ProductStatus.ACTIVE
+        );
+
+        adapter.save(product);
+        Optional<Product> loaded = adapter.findBySku(Sku.of("SKU-TT-1"));
+
+        assertTrue(loaded.isPresent());
+        assertEquals("Keyboard", loaded.get().getName());
     }
 }

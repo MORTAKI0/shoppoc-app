@@ -1,0 +1,4 @@
+com\shoppoc\user\application\UserApplicationServiceTest$InMemoryUserRepository.class
+com\shoppoc\user\application\UserApplicationServiceTest.class
+com\shoppoc\user\UserTestApplication.class
+com\shoppoc\user\infrastructure\persistence\JpaUserRepositoryAdapterTest.class

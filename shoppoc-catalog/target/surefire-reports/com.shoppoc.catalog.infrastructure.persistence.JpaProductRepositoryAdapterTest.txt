@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.shoppoc.catalog.infrastructure.persistence.JpaProductRepositoryAdapterTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.695 s - in com.shoppoc.catalog.infrastructure.persistence.JpaProductRepositoryAdapterTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.723 s - in com.shoppoc.catalog.infrastructure.persistence.JpaProductRepositoryAdapterTest

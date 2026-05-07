@@ -1,1 +1,12 @@
+C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\architecture\ModuleDependencyRulesTest.java
+C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\catalog\CatalogLocalSeedDataTest.java
+C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\app\security\AuthControllerIntegrationTest.java
+C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\TestWebMvcApplication.java
+C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\app\security\SecurityAccessIntegrationTest.java
+C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\app\ShopPocApplicationContextTest.java
+C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\catalog\infrastructure\web\ProductControllerTest.java
+C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\user\infrastructure\web\UserRegistrationControllerTest.java
 C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\app\web\GlobalExceptionHandlerTest.java
+C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\architecture\ControllerRulesTest.java
+C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\architecture\PackageBoundaryRulesTest.java
+C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\catalog\infrastructure\web\AdminProductControllerTest.java
