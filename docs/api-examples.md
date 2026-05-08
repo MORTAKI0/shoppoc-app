@@ -36,6 +36,16 @@ curl.exe -i -X POST "http://localhost:8080/api/v1/auth/login" -H "Content-Type: 
 
 Expected: `200`.
 
+## 4.1) Registration (repeatable with unique email)
+
+```powershell
+$ts = Get-Date -Format "yyyyMMddHHmmss"
+$body = @{ email = "accept-$ts@example.com"; password = "Password123!" } | ConvertTo-Json -Compress
+Invoke-WebRequest -Uri "http://localhost:8080/api/v1/users/register" -Method POST -ContentType "application/json" -Body $body
+```
+
+Expected: `201` and user payload without password/hash fields.
+
 ## 5) Admin create product
 
 ```powershell
@@ -59,6 +69,22 @@ curl.exe -i -X POST "http://localhost:8080/api/v1/orders" -u "user@example.com:P
 ```
 
 Expected `201` with `status=PAYMENT_REJECTED`, `paymentStatus=REJECTED`, rejection reason present.
+
+## 7.1) Direct payment authorize (stub-ok)
+
+```powershell
+curl.exe -i -X POST "http://localhost:8080/api/v1/payments/authorize" -u "user@example.com:Password123!" -H "Content-Type: application/json" -d "{\"amount\":99.99,\"currency\":\"EUR\",\"orderReference\":\"LOCAL-PAY-OK\",\"paymentMethodToken\":\"stub-ok\"}"
+```
+
+Expected: `201` and `status=AUTHORIZED`, `provider=LOCAL_STUB`.
+
+## 7.2) Direct payment reject (reject token)
+
+```powershell
+curl.exe -i -X POST "http://localhost:8080/api/v1/payments/authorize" -u "user@example.com:Password123!" -H "Content-Type: application/json" -d "{\"amount\":99.99,\"currency\":\"EUR\",\"orderReference\":\"LOCAL-PAY-REJECT\",\"paymentMethodToken\":\"reject\"}"
+```
+
+Expected: `201` and `status=REJECTED` with rejection reason.
 
 ## 8) User order history
 
