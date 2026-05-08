@@ -2,218 +2,122 @@
 
 Base URL: `http://localhost:8080`
 
-## Start App (Local Profile)
+Demo credentials below are local-only and must never be reused outside local profile.
 
-```bash
-mvn spring-boot:run -pl shoppoc-app -Dspring-boot.run.profiles=local
+## 1) Health
+
+```powershell
+curl.exe -i "http://localhost:8080/actuator/health"
 ```
 
-## Health Check
+Expected: `200` and `{"status":"UP"}`.
 
-```bash
-curl.exe http://localhost:8080/actuator/health
+## 2) Public catalog browse
+
+```powershell
+curl.exe -i "http://localhost:8080/api/v1/products"
 ```
 
-## User Registration (Public)
+Copy one product id into `PRODUCT_ID_HERE` for next calls.
 
-```bash
-curl.exe -i -X POST http://localhost:8080/api/v1/users/register \
-  -H "Content-Type: application/json" \
-  -d "{\"email\":\"user@example.com\",\"password\":\"Password123!\"}"
+## 3) User profile
+
+```powershell
+curl.exe -i -u "user@example.com:Password123!" "http://localhost:8080/api/v1/users/me"
 ```
 
-## Login (Public)
+Expected: `200`.
 
-```bash
-curl.exe -i -X POST http://localhost:8080/api/v1/auth/login \
-  -H "Content-Type: application/json" \
-  -d "{\"email\":\"user@example.com\",\"password\":\"Password123!\"}"
+## 4) Login
+
+```powershell
+curl.exe -i -X POST "http://localhost:8080/api/v1/auth/login" -H "Content-Type: application/json" -d "{\"email\":\"user@example.com\",\"password\":\"Password123!\"}"
 ```
 
-## Catalog Browsing (Public Endpoint)
+Expected: `200`.
 
-```bash
-curl.exe http://localhost:8080/api/v1/products
+## 5) Admin create product
+
+```powershell
+curl.exe -i -X POST "http://localhost:8080/api/v1/admin/products" -u "admin@example.com:Admin123!" -H "Content-Type: application/json" -d "{\"sku\":\"SKU-MOUSE-LOCAL\",\"name\":\"Local Demo Mouse\",\"description\":\"Mouse created from admin demo flow\",\"priceAmount\":79.00,\"priceCurrency\":\"EUR\",\"stockQuantity\":40}"
 ```
 
-```bash
-curl.exe http://localhost:8080/api/v1/products/{productId}
+Expected: `201`. If SKU exists, use different SKU.
+
+## 6) Create authorized order
+
+```powershell
+curl.exe -i -X POST "http://localhost:8080/api/v1/orders" -u "user@example.com:Password123!" -H "Content-Type: application/json" -d "{\"paymentMethodToken\":\"stub-ok\",\"lines\":[{\"productId\":\"PRODUCT_ID_HERE\",\"quantity\":2}]}"
 ```
 
-## Current User Profile (Authenticated)
+Expected `201` with `status=PAID`, `paymentStatus=AUTHORIZED`, total fields calculated.
 
-```bash
-curl.exe -i http://localhost:8080/api/v1/users/me ^
-  -u user@example.com:Password123!
+## 7) Create rejected order
+
+```powershell
+curl.exe -i -X POST "http://localhost:8080/api/v1/orders" -u "user@example.com:Password123!" -H "Content-Type: application/json" -d "{\"paymentMethodToken\":\"reject\",\"lines\":[{\"productId\":\"PRODUCT_ID_HERE\",\"quantity\":1}]}"
 ```
 
-Expected `200 OK` body:
+Expected `201` with `status=PAYMENT_REJECTED`, `paymentStatus=REJECTED`, rejection reason present.
 
-```json
-{
-  "id": "f4967a97-4df0-4981-a4f7-0e19385fd43a",
-  "email": "user@example.com",
-  "roles": ["USER"],
-  "status": "ACTIVE"
-}
-```
+## 8) User order history
 
-## Admin Product Creation (ADMIN Role Required)
-
-```bash
-curl.exe -i -X POST http://localhost:8080/api/v1/admin/products \
-  -u admin@example.com:Admin123! \
-  -H "Content-Type: application/json" \
-  -d "{\"sku\":\"SKU-MOUSE-001\",\"name\":\"Wireless Mouse\",\"description\":\"Wireless mouse for daily work\",\"priceAmount\":79.00,\"priceCurrency\":\"EUR\",\"stockQuantity\":40}"
-```
-
-Notes:
-
-- Protected endpoints use HTTP Basic auth for now.
-- `GET /api/v1/users/me` requires authentication.
-- Profile response never includes `password` or `passwordHash`.
-- Demo credentials only for local verification.
-- Seeded products are local demo data only.
-- No real credentials/secrets used.
-
-## Payment Authorization (Authenticated USER/ADMIN)
-
-```bash
-curl.exe -i -X POST "http://localhost:8080/api/v1/payments/authorize" -u "user@example.com:Password123!" -H "Content-Type: application/json" -d "{\"amount\":99.99,\"currency\":\"EUR\",\"orderReference\":\"ORDER-DEMO-001\",\"paymentMethodToken\":\"stub-ok\"}"
-```
-
-## Payment Authorization Rejected (Local Stub)
-
-```bash
-curl.exe -i -X POST "http://localhost:8080/api/v1/payments/authorize" -u "user@example.com:Password123!" -H "Content-Type: application/json" -d "{\"amount\":99.99,\"currency\":\"EUR\",\"orderReference\":\"ORDER-DEMO-002\",\"paymentMethodToken\":\"reject\"}"
-```
-
-## Get Payment Status (Authenticated USER/ADMIN)
-
-```bash
-curl.exe -i -u "user@example.com:Password123!" "http://localhost:8080/api/v1/payments/{paymentId}"
-```
-
-- Payment provider is local stub only.
-- No real payment provider calls.
-- No real card numbers stored or transmitted.
-
-## Create Order (Authenticated USER/ADMIN)
-
-1. Get product id:
-
-```bash
-curl.exe http://localhost:8080/api/v1/products
-```
-
-2. Create order with authorized payment:
-
-```bash
-curl.exe -i -X POST "http://localhost:8080/api/v1/orders" -u "user@example.com:Password123!" -H "Content-Type: application/json" -d "{\"paymentMethodToken\":\"stub-ok\",\"lines\":[{\"productId\":\"{productIdFromCatalog}\",\"quantity\":2}]}"
-```
-
-Expected:
-
-- HTTP 201
-- `status` = `PAID`
-- `paymentStatus` = `AUTHORIZED`
-- `totalAmount` calculated from unit price * quantity
-- lines include product `sku` and `productName`
-
-3. Create order with rejected payment:
-
-```bash
-curl.exe -i -X POST "http://localhost:8080/api/v1/orders" -u "user@example.com:Password123!" -H "Content-Type: application/json" -d "{\"paymentMethodToken\":\"reject\",\"lines\":[{\"productId\":\"{productIdFromCatalog}\",\"quantity\":1}]}"
-```
-
-Expected:
-
-- HTTP 201
-- `status` = `PAYMENT_REJECTED`
-- `paymentStatus` = `REJECTED`
-- `paymentRejectionReason` present
-
-Notes:
-
-- Payment provider is local stub only.
-- No real provider calls.
-- No card numbers used/stored.
-- Endpoint requires USER or ADMIN auth.
-
-## Get My Order History (Authenticated USER/ADMIN)
-
-```bash
+```powershell
 curl.exe -i -u "user@example.com:Password123!" "http://localhost:8080/api/v1/orders"
 ```
 
-Expected:
+Expected: `200`.
 
-- HTTP 200
-- JSON array contains only current user orders
-- Each item includes `id`, `status`, `totalAmount`, `totalCurrency`, `lines`, and payment fields
+## 9) User order detail
 
-## Get Order Detail (Authenticated USER/ADMIN)
-
-```bash
-curl.exe -i -u "user@example.com:Password123!" "http://localhost:8080/api/v1/orders/{orderId}"
+```powershell
+curl.exe -i -u "user@example.com:Password123!" "http://localhost:8080/api/v1/orders/ORDER_ID_HERE"
 ```
 
-Expected:
+Expected: `200` for owned order.
 
-- HTTP 200 for own order
-- Body includes `id`, `status`, `totalAmount`, `totalCurrency`, `lines`, `paymentStatus`
-- Cross-user access denied (`403`)
-- Anonymous access denied (`401`)
+## 10) Admin order list
 
-Notes:
-
-- Users can view only own orders.
-- Admin all-orders view available at `GET /api/v1/admin/orders`.
-
-## Admin List All Orders (ADMIN Role Required)
-
-```bash
+```powershell
 curl.exe -i -u "admin@example.com:Admin123!" "http://localhost:8080/api/v1/admin/orders"
 ```
 
-Expected `200 OK` body sample:
+Expected: `200`.
 
-```json
-[
-  {
-    "id": "order-123",
-    "customerEmail": "user@example.com",
-    "status": "PAID",
-    "totalAmount": 1299.00,
-    "totalCurrency": "EUR",
-    "createdAt": "2026-05-08T12:00:00Z",
-    "paymentStatus": "AUTHORIZED",
-    "paymentId": "pay-1",
-    "paymentReference": "ref-1"
-  }
-]
+## 11) Security behavior checks
+
+- USER calling admin orders:
+
+```powershell
+curl.exe -i -u "user@example.com:Password123!" "http://localhost:8080/api/v1/admin/orders"
 ```
 
-- Requires `ADMIN` role.
-- `USER` gets `403 Forbidden`.
-- Anonymous gets `401 Unauthorized`.
-- User self-service history remains `GET /api/v1/orders`.
+Expected: `403`.
 
-## In-Process Notification Recording
+- Anonymous calling orders:
 
-- Creating order with `paymentMethodToken="stub-ok"` records `ORDER_PAYMENT_AUTHORIZED` notification.
-- Creating order with `paymentMethodToken="reject"` records `ORDER_PAYMENT_REJECTED` notification.
-- Notifications stored in local DB only.
-- No email sent.
-- No Kafka/RabbitMQ used.
-- No real provider credentials needed.
+```powershell
+curl.exe -i "http://localhost:8080/api/v1/orders"
+```
 
-Optional local H2 check:
+Expected: `401`.
 
-- H2 console: `/h2-console`
-- JDBC URL: use current local app config
-- Query:
+- Anonymous calling public products:
+
+```powershell
+curl.exe -i "http://localhost:8080/api/v1/products"
+```
+
+Expected: `200`.
+
+## 12) Notification recording proof
+
+Order payment outcomes create notification rows in local DB.
+
+If H2 console enabled, run:
 
 ```sql
 SELECT * FROM NOTIFICATIONS;
 ```
+
+No email sent. No Kafka/RabbitMQ.

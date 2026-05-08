@@ -38,22 +38,23 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::               (v2.7.18)
 
-2026-05-07 17:36:24.549  INFO 22848 --- [           main] com.shoppoc.app.ShopPocApplication       : Starting ShopPocApplication using Java 11.0.31 on EGAWILLDOIT with PID 22848 (C:\Users\abmor\Desktop\shopPoc\shoppoc-app\target\classes started by abmor in C:\Users\abmor\Desktop\shopPoc\shoppoc-app)
-2026-05-07 17:36:24.550  INFO 22848 --- [           main] com.shoppoc.app.ShopPocApplication       : The following 1 profile is active: "local"
-2026-05-07 17:36:25.200  INFO 22848 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-07 17:36:25.264  INFO 22848 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 4 JPA repository interfaces.
-2026-05-07 17:36:26.298  INFO 22848 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2026-05-07 17:36:26.310  INFO 22848 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-05-07 17:36:26.310  INFO 22848 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
-2026-05-07 17:36:26.449  INFO 22848 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-05-07 17:36:26.449  INFO 22848 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1839 ms
-2026-05-07 17:36:26.564  INFO 22848 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-05-07 17:36:26.664  INFO 22848 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-05-07 17:36:26.681  INFO 22848 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:shoppoc'
-2026-05-07 17:36:26.783  INFO 22848 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-05-07 17:36:26.824  INFO 22848 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
-2026-05-07 17:36:26.932  INFO 22848 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2026-05-07 17:36:27.054  INFO 22848 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2026-05-08 10:39:57.597  INFO 13136 --- [           main] com.shoppoc.app.ShopPocApplication       : Starting ShopPocApplication using Java 11.0.31 on EGAWILLDOIT with PID 13136 (C:\Users\abmor\Desktop\shopPoc\shoppoc-app\target\classes started by abmor in C:\Users\abmor\Desktop\shopPoc\shoppoc-app)
+2026-05-08 10:39:57.597  INFO 13136 --- [           main] com.shoppoc.app.ShopPocApplication       : The following 1 profile is active: "local"
+2026-05-08 10:39:58.096  INFO 13136 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-08 10:39:58.150  INFO 13136 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43 ms. Found 5 JPA repository interfaces.
+2026-05-08 10:39:58.978  INFO 13136 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2026-05-08 10:39:58.978  INFO 13136 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-08 10:39:58.994  INFO 13136 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2026-05-08 10:39:59.096  INFO 13136 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-08 10:39:59.096  INFO 13136 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1451 ms
+2026-05-08 10:39:59.177  INFO 13136 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-08 10:39:59.276  INFO 13136 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-08 10:39:59.280  INFO 13136 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:shoppoc'
+2026-05-08 10:39:59.362  INFO 13136 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-08 10:39:59.395  INFO 13136 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2026-05-08 10:39:59.494  INFO 13136 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2026-05-08 10:39:59.577  INFO 13136 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+Hibernate: create table notifications (id varchar(255) not null, body varchar(2000) not null, created_at timestamp not null, customer_email varchar(255) not null, order_id varchar(255) not null, payment_id varchar(255), status varchar(255) not null, subject varchar(255) not null, type varchar(255) not null, primary key (id))
 Hibernate: create table order_lines (id bigint generated by default as identity, line_total_amount numeric(19,2) not null, line_total_currency varchar(255) not null, product_id varchar(255) not null, product_name varchar(255) not null, quantity integer not null, sku varchar(255) not null, unit_price_amount numeric(19,2) not null, unit_price_currency varchar(255) not null, order_id varchar(255), primary key (id))
 Hibernate: create table orders (id varchar(255) not null, created_at timestamp not null, customer_email varchar(255) not null, payment_id varchar(255), payment_reference varchar(255), payment_rejection_reason varchar(255), payment_status varchar(255), status varchar(255) not null, total_amount numeric(19,2) not null, total_currency varchar(255) not null, primary key (id))
 Hibernate: create table payments (id varchar(255) not null, amount numeric(19,2) not null, currency varchar(255) not null, processed_at timestamp not null, provider varchar(255) not null, reference varchar(255) not null, rejection_reason varchar(255), status varchar(255) not null, primary key (id))
@@ -66,77 +67,39 @@ Hibernate: alter table users drop constraint if exists UK_6dotkott2kjsp8vw4d0m25
 Hibernate: alter table users add constraint UK_6dotkott2kjsp8vw4d0m25fb7 unique (email)
 Hibernate: alter table order_lines add constraint FK1smc0s578t2oih21yn9hw6usr foreign key (order_id) references orders
 Hibernate: alter table user_roles add constraint FKhfh9dx7w3ubf1co1vdev94g3f foreign key (user_id) references users
-2026-05-07 17:36:27.683  INFO 22848 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2026-05-07 17:36:27.699  INFO 22848 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-05-07 17:36:28.232  INFO 22848 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@21be80f6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1af6d656, org.springframework.security.web.context.SecurityContextPersistenceFilter@2148b47e, org.springframework.security.web.header.HeaderWriterFilter@32e9c3af, org.springframework.security.web.authentication.logout.LogoutFilter@3c04ddda, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@359a2c96, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@463a1f47, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@23ade612, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4acdf6e7, org.springframework.security.web.session.SessionManagementFilter@193f3306, org.springframework.security.web.access.ExceptionTranslationFilter@62ff14cd, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4c05f83b]
-2026-05-07 17:36:28.597  INFO 22848 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
-2026-05-07 17:36:28.647  INFO 22848 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2026-05-07 17:36:28.664  INFO 22848 --- [           main] com.shoppoc.app.ShopPocApplication       : Started ShopPocApplication in 4.725 seconds (JVM running for 5.344)
-Hibernate: select jpauserent0_.id as id1_5_, jpauserent0_.created_at as created_2_5_, jpauserent0_.email as email3_5_, jpauserent0_.password_hash as password4_5_, jpauserent0_.status as status5_5_ from users jpauserent0_ where jpauserent0_.email=?
-Hibernate: select jpauserent0_.id as id1_5_0_, jpauserent0_.created_at as created_2_5_0_, jpauserent0_.email as email3_5_0_, jpauserent0_.password_hash as password4_5_0_, jpauserent0_.status as status5_5_0_ from users jpauserent0_ where jpauserent0_.id=?
-Hibernate: insert into users (created_at, email, password_hash, status, id) values (?, ?, ?, ?, ?)
-Hibernate: insert into user_roles (user_id, role) values (?, ?)
-Hibernate: select jpauserent0_.id as id1_5_, jpauserent0_.created_at as created_2_5_, jpauserent0_.email as email3_5_, jpauserent0_.password_hash as password4_5_, jpauserent0_.status as status5_5_ from users jpauserent0_ where jpauserent0_.email=?
-Hibernate: select jpauserent0_.id as id1_5_0_, jpauserent0_.created_at as created_2_5_0_, jpauserent0_.email as email3_5_0_, jpauserent0_.password_hash as password4_5_0_, jpauserent0_.status as status5_5_0_ from users jpauserent0_ where jpauserent0_.id=?
-Hibernate: insert into users (created_at, email, password_hash, status, id) values (?, ?, ?, ?, ?)
-Hibernate: insert into user_roles (user_id, role) values (?, ?)
-Hibernate: select jpaproduct0_.id as id1_3_, jpaproduct0_.description as descript2_3_, jpaproduct0_.name as name3_3_, jpaproduct0_.price_amount as price_am4_3_, jpaproduct0_.price_currency as price_cu5_3_, jpaproduct0_.sku as sku6_3_, jpaproduct0_.status as status7_3_, jpaproduct0_.stock_quantity as stock_qu8_3_ from products jpaproduct0_ where jpaproduct0_.sku=?
-Hibernate: select jpaproduct0_.id as id1_3_0_, jpaproduct0_.description as descript2_3_0_, jpaproduct0_.name as name3_3_0_, jpaproduct0_.price_amount as price_am4_3_0_, jpaproduct0_.price_currency as price_cu5_3_0_, jpaproduct0_.sku as sku6_3_0_, jpaproduct0_.status as status7_3_0_, jpaproduct0_.stock_quantity as stock_qu8_3_0_ from products jpaproduct0_ where jpaproduct0_.id=?
-Hibernate: insert into products (description, name, price_amount, price_currency, sku, status, stock_quantity, id) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: select jpaproduct0_.id as id1_3_, jpaproduct0_.description as descript2_3_, jpaproduct0_.name as name3_3_, jpaproduct0_.price_amount as price_am4_3_, jpaproduct0_.price_currency as price_cu5_3_, jpaproduct0_.sku as sku6_3_, jpaproduct0_.status as status7_3_, jpaproduct0_.stock_quantity as stock_qu8_3_ from products jpaproduct0_ where jpaproduct0_.sku=?
-Hibernate: select jpaproduct0_.id as id1_3_0_, jpaproduct0_.description as descript2_3_0_, jpaproduct0_.name as name3_3_0_, jpaproduct0_.price_amount as price_am4_3_0_, jpaproduct0_.price_currency as price_cu5_3_0_, jpaproduct0_.sku as sku6_3_0_, jpaproduct0_.status as status7_3_0_, jpaproduct0_.stock_quantity as stock_qu8_3_0_ from products jpaproduct0_ where jpaproduct0_.id=?
-Hibernate: insert into products (description, name, price_amount, price_currency, sku, status, stock_quantity, id) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: select jpaproduct0_.id as id1_3_, jpaproduct0_.description as descript2_3_, jpaproduct0_.name as name3_3_, jpaproduct0_.price_amount as price_am4_3_, jpaproduct0_.price_currency as price_cu5_3_, jpaproduct0_.sku as sku6_3_, jpaproduct0_.status as status7_3_, jpaproduct0_.stock_quantity as stock_qu8_3_ from products jpaproduct0_ where jpaproduct0_.sku=?
-Hibernate: select jpaproduct0_.id as id1_3_0_, jpaproduct0_.description as descript2_3_0_, jpaproduct0_.name as name3_3_0_, jpaproduct0_.price_amount as price_am4_3_0_, jpaproduct0_.price_currency as price_cu5_3_0_, jpaproduct0_.sku as sku6_3_0_, jpaproduct0_.status as status7_3_0_, jpaproduct0_.stock_quantity as stock_qu8_3_0_ from products jpaproduct0_ where jpaproduct0_.id=?
-Hibernate: insert into products (description, name, price_amount, price_currency, sku, status, stock_quantity, id) values (?, ?, ?, ?, ?, ?, ?, ?)
-2026-05-07 17:36:29.216  INFO 22848 --- [nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-05-07 17:36:29.217  INFO 22848 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-05-07 17:36:29.217  INFO 22848 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-Hibernate: select jpaproduct0_.id as id1_3_, jpaproduct0_.description as descript2_3_, jpaproduct0_.name as name3_3_, jpaproduct0_.price_amount as price_am4_3_, jpaproduct0_.price_currency as price_cu5_3_, jpaproduct0_.sku as sku6_3_, jpaproduct0_.status as status7_3_, jpaproduct0_.stock_quantity as stock_qu8_3_ from products jpaproduct0_ where jpaproduct0_.status=?
-Hibernate: select jpauserent0_.id as id1_5_, jpauserent0_.created_at as created_2_5_, jpauserent0_.email as email3_5_, jpauserent0_.password_hash as password4_5_, jpauserent0_.status as status5_5_ from users jpauserent0_ where jpauserent0_.email=?
-Hibernate: select roles0_.user_id as user_id1_4_0_, roles0_.role as role2_4_0_ from user_roles roles0_ where roles0_.user_id=?
-2026-05-07 17:36:58.623  WARN 22848 --- [nio-8080-exec-6] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [381] milliseconds.
-Hibernate: select jpaproduct0_.id as id1_3_0_, jpaproduct0_.description as descript2_3_0_, jpaproduct0_.name as name3_3_0_, jpaproduct0_.price_amount as price_am4_3_0_, jpaproduct0_.price_currency as price_cu5_3_0_, jpaproduct0_.sku as sku6_3_0_, jpaproduct0_.status as status7_3_0_, jpaproduct0_.stock_quantity as stock_qu8_3_0_ from products jpaproduct0_ where jpaproduct0_.id=?
-Hibernate: select jpaorderen0_.id as id1_1_1_, jpaorderen0_.created_at as created_2_1_1_, jpaorderen0_.customer_email as customer3_1_1_, jpaorderen0_.payment_id as payment_4_1_1_, jpaorderen0_.payment_reference as payment_5_1_1_, jpaorderen0_.payment_rejection_reason as payment_6_1_1_, jpaorderen0_.payment_status as payment_7_1_1_, jpaorderen0_.status as status8_1_1_, jpaorderen0_.total_amount as total_am9_1_1_, jpaorderen0_.total_currency as total_c10_1_1_, lines1_.order_id as order_i10_0_3_, lines1_.id as id1_0_3_, lines1_.id as id1_0_0_, lines1_.line_total_amount as line_tot2_0_0_, lines1_.line_total_currency as line_tot3_0_0_, lines1_.product_id as product_4_0_0_, lines1_.product_name as product_5_0_0_, lines1_.quantity as quantity6_0_0_, lines1_.sku as sku7_0_0_, lines1_.unit_price_amount as unit_pri8_0_0_, lines1_.unit_price_currency as unit_pri9_0_0_ from orders jpaorderen0_ left outer join order_lines lines1_ on jpaorderen0_.id=lines1_.order_id where jpaorderen0_.id=?
-Hibernate: insert into orders (created_at, customer_email, payment_id, payment_reference, payment_rejection_reason, payment_status, status, total_amount, total_currency, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into order_lines (id, line_total_amount, line_total_currency, product_id, product_name, quantity, sku, unit_price_amount, unit_price_currency) values (default, ?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: select jpapayment0_.id as id1_2_0_, jpapayment0_.amount as amount2_2_0_, jpapayment0_.currency as currency3_2_0_, jpapayment0_.processed_at as processe4_2_0_, jpapayment0_.provider as provider5_2_0_, jpapayment0_.reference as referenc6_2_0_, jpapayment0_.rejection_reason as rejectio7_2_0_, jpapayment0_.status as status8_2_0_ from payments jpapayment0_ where jpapayment0_.id=?
-Hibernate: insert into payments (amount, currency, processed_at, provider, reference, rejection_reason, status, id) values (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: insert into order_lines (id, line_total_amount, line_total_currency, product_id, product_name, quantity, sku, unit_price_amount, unit_price_currency) values (default, ?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: update orders set created_at=?, customer_email=?, payment_id=?, payment_reference=?, payment_rejection_reason=?, payment_status=?, status=?, total_amount=?, total_currency=? where id=?
-Hibernate: update order_lines set order_id=? where id=?
-Hibernate: select jpauserent0_.id as id1_5_, jpauserent0_.created_at as created_2_5_, jpauserent0_.email as email3_5_, jpauserent0_.password_hash as password4_5_, jpauserent0_.status as status5_5_ from users jpauserent0_ where jpauserent0_.email=?
-Hibernate: select roles0_.user_id as user_id1_4_0_, roles0_.role as role2_4_0_ from user_roles roles0_ where roles0_.user_id=?
-Hibernate: select jpaorderen0_.id as id1_1_0_, jpaorderen0_.created_at as created_2_1_0_, jpaorderen0_.customer_email as customer3_1_0_, jpaorderen0_.payment_id as payment_4_1_0_, jpaorderen0_.payment_reference as payment_5_1_0_, jpaorderen0_.payment_rejection_reason as payment_6_1_0_, jpaorderen0_.payment_status as payment_7_1_0_, jpaorderen0_.status as status8_1_0_, jpaorderen0_.total_amount as total_am9_1_0_, jpaorderen0_.total_currency as total_c10_1_0_ from orders jpaorderen0_ where jpaorderen0_.id=?
-Hibernate: select lines0_.order_id as order_i10_0_0_, lines0_.id as id1_0_0_, lines0_.id as id1_0_1_, lines0_.line_total_amount as line_tot2_0_1_, lines0_.line_total_currency as line_tot3_0_1_, lines0_.product_id as product_4_0_1_, lines0_.product_name as product_5_0_1_, lines0_.quantity as quantity6_0_1_, lines0_.sku as sku7_0_1_, lines0_.unit_price_amount as unit_pri8_0_1_, lines0_.unit_price_currency as unit_pri9_0_1_ from order_lines lines0_ where lines0_.order_id=?
-Hibernate: select jpauserent0_.id as id1_5_, jpauserent0_.created_at as created_2_5_, jpauserent0_.email as email3_5_, jpauserent0_.password_hash as password4_5_, jpauserent0_.status as status5_5_ from users jpauserent0_ where jpauserent0_.email=?
-Hibernate: select roles0_.user_id as user_id1_4_0_, roles0_.role as role2_4_0_ from user_roles roles0_ where roles0_.user_id=?
-Hibernate: select jpaorderen0_.id as id1_1_, jpaorderen0_.created_at as created_2_1_, jpaorderen0_.customer_email as customer3_1_, jpaorderen0_.payment_id as payment_4_1_, jpaorderen0_.payment_reference as payment_5_1_, jpaorderen0_.payment_rejection_reason as payment_6_1_, jpaorderen0_.payment_status as payment_7_1_, jpaorderen0_.status as status8_1_, jpaorderen0_.total_amount as total_am9_1_, jpaorderen0_.total_currency as total_c10_1_ from orders jpaorderen0_ where jpaorderen0_.customer_email=? order by jpaorderen0_.created_at desc
-Hibernate: select lines0_.order_id as order_i10_0_0_, lines0_.id as id1_0_0_, lines0_.id as id1_0_1_, lines0_.line_total_amount as line_tot2_0_1_, lines0_.line_total_currency as line_tot3_0_1_, lines0_.product_id as product_4_0_1_, lines0_.product_name as product_5_0_1_, lines0_.quantity as quantity6_0_1_, lines0_.sku as sku7_0_1_, lines0_.unit_price_amount as unit_pri8_0_1_, lines0_.unit_price_currency as unit_pri9_0_1_ from order_lines lines0_ where lines0_.order_id=?
-Hibernate: select jpauserent0_.id as id1_5_, jpauserent0_.created_at as created_2_5_, jpauserent0_.email as email3_5_, jpauserent0_.password_hash as password4_5_, jpauserent0_.status as status5_5_ from users jpauserent0_ where jpauserent0_.email=?
-Hibernate: select jpauserent0_.id as id1_5_0_, jpauserent0_.created_at as created_2_5_0_, jpauserent0_.email as email3_5_0_, jpauserent0_.password_hash as password4_5_0_, jpauserent0_.status as status5_5_0_ from users jpauserent0_ where jpauserent0_.id=?
-Hibernate: insert into users (created_at, email, password_hash, status, id) values (?, ?, ?, ?, ?)
-Hibernate: insert into user_roles (user_id, role) values (?, ?)
-Hibernate: select jpauserent0_.id as id1_5_, jpauserent0_.created_at as created_2_5_, jpauserent0_.email as email3_5_, jpauserent0_.password_hash as password4_5_, jpauserent0_.status as status5_5_ from users jpauserent0_ where jpauserent0_.email=?
-Hibernate: select roles0_.user_id as user_id1_4_0_, roles0_.role as role2_4_0_ from user_roles roles0_ where roles0_.user_id=?
-Hibernate: select jpaorderen0_.id as id1_1_0_, jpaorderen0_.created_at as created_2_1_0_, jpaorderen0_.customer_email as customer3_1_0_, jpaorderen0_.payment_id as payment_4_1_0_, jpaorderen0_.payment_reference as payment_5_1_0_, jpaorderen0_.payment_rejection_reason as payment_6_1_0_, jpaorderen0_.payment_status as payment_7_1_0_, jpaorderen0_.status as status8_1_0_, jpaorderen0_.total_amount as total_am9_1_0_, jpaorderen0_.total_currency as total_c10_1_0_ from orders jpaorderen0_ where jpaorderen0_.id=?
-Hibernate: select lines0_.order_id as order_i10_0_0_, lines0_.id as id1_0_0_, lines0_.id as id1_0_1_, lines0_.line_total_amount as line_tot2_0_1_, lines0_.line_total_currency as line_tot3_0_1_, lines0_.product_id as product_4_0_1_, lines0_.product_name as product_5_0_1_, lines0_.quantity as quantity6_0_1_, lines0_.sku as sku7_0_1_, lines0_.unit_price_amount as unit_pri8_0_1_, lines0_.unit_price_currency as unit_pri9_0_1_ from order_lines lines0_ where lines0_.order_id=?
-Hibernate: select jpaproduct0_.id as id1_3_, jpaproduct0_.description as descript2_3_, jpaproduct0_.name as name3_3_, jpaproduct0_.price_amount as price_am4_3_, jpaproduct0_.price_currency as price_cu5_3_, jpaproduct0_.sku as sku6_3_, jpaproduct0_.status as status7_3_, jpaproduct0_.stock_quantity as stock_qu8_3_ from products jpaproduct0_ where jpaproduct0_.status=?
-Hibernate: select jpauserent0_.id as id1_5_, jpauserent0_.created_at as created_2_5_, jpauserent0_.email as email3_5_, jpauserent0_.password_hash as password4_5_, jpauserent0_.status as status5_5_ from users jpauserent0_ where jpauserent0_.email=?
-Hibernate: select roles0_.user_id as user_id1_4_0_, roles0_.role as role2_4_0_ from user_roles roles0_ where roles0_.user_id=?
-Hibernate: select jpauserent0_.id as id1_5_, jpauserent0_.created_at as created_2_5_, jpauserent0_.email as email3_5_, jpauserent0_.password_hash as password4_5_, jpauserent0_.status as status5_5_ from users jpauserent0_ where jpauserent0_.email=?
-Hibernate: select roles0_.user_id as user_id1_4_0_, roles0_.role as role2_4_0_ from user_roles roles0_ where roles0_.user_id=?
-Hibernate: select jpauserent0_.id as id1_5_, jpauserent0_.created_at as created_2_5_, jpauserent0_.email as email3_5_, jpauserent0_.password_hash as password4_5_, jpauserent0_.status as status5_5_ from users jpauserent0_ where jpauserent0_.email=?
-Hibernate: select roles0_.user_id as user_id1_4_0_, roles0_.role as role2_4_0_ from user_roles roles0_ where roles0_.user_id=?
-Hibernate: select jpapayment0_.id as id1_2_0_, jpapayment0_.amount as amount2_2_0_, jpapayment0_.currency as currency3_2_0_, jpapayment0_.processed_at as processe4_2_0_, jpapayment0_.provider as provider5_2_0_, jpapayment0_.reference as referenc6_2_0_, jpapayment0_.rejection_reason as rejectio7_2_0_, jpapayment0_.status as status8_2_0_ from payments jpapayment0_ where jpapayment0_.id=?
-Hibernate: insert into payments (amount, currency, processed_at, provider, reference, rejection_reason, status, id) values (?, ?, ?, ?, ?, ?, ?, ?)
+2026-05-08 10:40:00.111  INFO 13136 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2026-05-08 10:40:00.127  INFO 13136 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-08 10:40:00.563  INFO 13136 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1c966488, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@45f6181a, org.springframework.security.web.context.SecurityContextPersistenceFilter@67216c33, org.springframework.security.web.header.HeaderWriterFilter@2dec57c5, org.springframework.security.web.authentication.logout.LogoutFilter@3777fc44, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@6dcc7696, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@c7a1db6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@17c72ffa, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@19d0d1ab, org.springframework.security.web.session.SessionManagementFilter@35b79b1f, org.springframework.security.web.access.ExceptionTranslationFilter@31ab75a5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@50841932]
+2026-05-08 10:40:00.863  INFO 13136 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2026-05-08 10:40:00.897  WARN 13136 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2026-05-08 10:40:00.897  INFO 13136 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-08 10:40:00.897  INFO 13136 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-08 10:40:00.913  INFO 13136 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-08 10:40:00.913  INFO 13136 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-05-08 10:40:00.913  INFO 13136 --- [           main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2026-05-08 10:40:00.930 ERROR 13136 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  48.252 s
-[INFO] Finished at: 2026-05-07T17:37:07+01:00
+[INFO] Total time:  6.416 s
+[INFO] Finished at: 2026-05-08T10:40:00+01:00
 [INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:2.7.18:run (default-cli) on project shoppoc-app: Application finished with exit code: -1 -> [Help 1]
+[ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:2.7.18:run (default-cli) on project shoppoc-app: Application finished with exit code: 1 -> [Help 1]
 [ERROR] 
 [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
 [ERROR] Re-run Maven using the -X switch to enable full debug logging.

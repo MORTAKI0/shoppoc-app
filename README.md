@@ -52,6 +52,15 @@ Expected response:
 - User: `sa`
 - Password: blank
 
-## API Examples
+## Developer Docs
 
-- [Catalog curl examples](docs/api-examples.md)
+- Architecture and boundaries: [AGENTS.md](AGENTS.md)
+- Local runbook: [docs/local-runbook.md](docs/local-runbook.md)
+- API examples: [docs/api-examples.md](docs/api-examples.md)
+
+## Demo Credentials (Local Profile Only)
+
+- `user@example.com` / `Password123!` (`USER`)
+- `admin@example.com` / `Admin123!` (`ADMIN`)
+
+These are local demo credentials only. Not production secrets.

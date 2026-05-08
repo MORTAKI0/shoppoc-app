@@ -3,6 +3,7 @@ C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\architectur
 C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\app\security\AuthControllerIntegrationTest.java
 C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\app\security\SecurityAccessIntegrationTest.java
 C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\order\infrastructure\web\AdminOrderControllerTest.java
+C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\app\local\LocalDemoDataIntegrationTest.java
 C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\app\security\NotificationRecordingIntegrationTest.java
 C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\app\security\OrderPaymentIntegrationTest.java
 C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\app\web\GlobalExceptionHandlerTest.java

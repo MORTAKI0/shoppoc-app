@@ -1,4 +1,5 @@
 com\shoppoc\TestWebMvcApplication.class
+com\shoppoc\app\local\LocalDemoDataIntegrationTest.class
 com\shoppoc\app\security\PaymentAccessIntegrationTest.class
 com\shoppoc\architecture\PackageBoundaryRulesTest.class
 com\shoppoc\order\infrastructure\web\OrderControllerTest.class
