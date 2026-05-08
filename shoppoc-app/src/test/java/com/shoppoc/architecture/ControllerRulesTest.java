@@ -30,6 +30,12 @@ class ControllerRulesTest {
             .that().haveSimpleNameEndingWith("Controller")
             .should(notDependOnRepositories());
 
+    @ArchTest
+    static final ArchRule controllers_should_not_depend_on_persistence_packages = noClasses()
+            .that().haveSimpleNameEndingWith("Controller")
+            .should().dependOnClassesThat()
+            .resideInAnyPackage("..infrastructure.persistence..");
+
     private static ArchCondition<JavaClass> notDependOnRepositories() {
         return new ArchCondition<JavaClass>("not depend on repository types") {
             @Override
@@ -38,7 +44,9 @@ class ControllerRulesTest {
                         .map(dep -> dep.getTargetClass())
                         .toArray(JavaClass[]::new)) {
                     String simpleName = dependency.getSimpleName();
-                    boolean forbidden = simpleName.endsWith("Repository") || simpleName.startsWith("SpringData");
+                    boolean forbidden = simpleName.endsWith("Repository")
+                            || simpleName.startsWith("SpringData")
+                            || simpleName.endsWith("RepositoryAdapter");
                     if (forbidden) {
                         String message = javaClass.getName() + " depends on repository " + dependency.getName();
                         events.add(SimpleConditionEvent.violated(javaClass, message));

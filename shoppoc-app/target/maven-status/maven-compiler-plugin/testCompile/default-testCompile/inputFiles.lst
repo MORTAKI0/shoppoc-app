@@ -7,6 +7,7 @@ C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\app\local\L
 C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\app\security\NotificationRecordingIntegrationTest.java
 C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\app\security\OrderPaymentIntegrationTest.java
 C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\app\web\GlobalExceptionHandlerTest.java
+C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\architecture\QualityRulesTest.java
 C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\payment\infrastructure\web\PaymentControllerTest.java
 C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\user\infrastructure\web\UserProfileControllerTest.java
 C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\architecture\PackageBoundaryRulesTest.java
@@ -18,4 +19,6 @@ C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\TestWebMvcA
 C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\app\ShopPocApplicationContextTest.java
 C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\catalog\infrastructure\web\ProductControllerTest.java
 C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\user\infrastructure\web\UserRegistrationControllerTest.java
+C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\architecture\ForbiddenSourcePatternsTest.java
 C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\architecture\ControllerRulesTest.java
+C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\architecture\SharedAndAppRulesTest.java

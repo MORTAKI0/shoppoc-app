@@ -18,7 +18,10 @@ class PackageBoundaryRulesTest {
                     "..infrastructure..",
                     "..web..",
                     "org.springframework.web..",
-                    "org.springframework.data.."
+                    "org.springframework.data..",
+                    "javax.persistence..",
+                    "javax.servlet..",
+                    "com.fasterxml.jackson.."
             );
 
     @ArchTest
