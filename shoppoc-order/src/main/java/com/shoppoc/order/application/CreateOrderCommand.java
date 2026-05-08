@@ -6,10 +6,12 @@ public class CreateOrderCommand {
 
     private final String customerEmail;
     private final List<CreateOrderLineCommand> lines;
+    private final String paymentMethodToken;
 
-    public CreateOrderCommand(String customerEmail, List<CreateOrderLineCommand> lines) {
+    public CreateOrderCommand(String customerEmail, List<CreateOrderLineCommand> lines, String paymentMethodToken) {
         this.customerEmail = customerEmail;
         this.lines = lines;
+        this.paymentMethodToken = paymentMethodToken;
     }
 
     public String getCustomerEmail() {
@@ -18,5 +20,9 @@ public class CreateOrderCommand {
 
     public List<CreateOrderLineCommand> getLines() {
         return lines;
+    }
+
+    public String getPaymentMethodToken() {
+        return paymentMethodToken;
     }
 }

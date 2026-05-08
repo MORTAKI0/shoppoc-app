@@ -1,5 +1,7 @@
 package com.shoppoc.order.domain;
 
 public enum OrderStatus {
-    CREATED
+    CREATED,
+    PAID,
+    PAYMENT_REJECTED
 }

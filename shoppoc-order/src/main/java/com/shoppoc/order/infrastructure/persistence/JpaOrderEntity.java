@@ -24,6 +24,10 @@ public class JpaOrderEntity {
 
     @Column(nullable = false)
     private String status;
+    private String paymentId;
+    private String paymentReference;
+    private String paymentStatus;
+    private String paymentRejectionReason;
 
     @Column(nullable = false)
     private BigDecimal totalAmount;
@@ -63,6 +67,38 @@ public class JpaOrderEntity {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getPaymentId() {
+        return paymentId;
+    }
+
+    public void setPaymentId(String paymentId) {
+        this.paymentId = paymentId;
+    }
+
+    public String getPaymentReference() {
+        return paymentReference;
+    }
+
+    public void setPaymentReference(String paymentReference) {
+        this.paymentReference = paymentReference;
+    }
+
+    public String getPaymentStatus() {
+        return paymentStatus;
+    }
+
+    public void setPaymentStatus(String paymentStatus) {
+        this.paymentStatus = paymentStatus;
+    }
+
+    public String getPaymentRejectionReason() {
+        return paymentRejectionReason;
+    }
+
+    public void setPaymentRejectionReason(String paymentRejectionReason) {
+        this.paymentRejectionReason = paymentRejectionReason;
     }
 
     public BigDecimal getTotalAmount() {

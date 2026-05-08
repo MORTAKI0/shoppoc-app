@@ -4,6 +4,10 @@ import com.shoppoc.order.api.OrderDto;
 import com.shoppoc.order.application.CreateOrderCommand;
 import com.shoppoc.order.application.CreateOrderLineCommand;
 import com.shoppoc.order.application.CreateOrderUseCase;
+import com.shoppoc.order.application.GetOrderUseCase;
+import com.shoppoc.order.application.ListCurrentUserOrdersUseCase;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,9 +25,15 @@ import java.util.List;
 public class OrderController {
 
     private final CreateOrderUseCase createOrderUseCase;
+    private final GetOrderUseCase getOrderUseCase;
+    private final ListCurrentUserOrdersUseCase listCurrentUserOrdersUseCase;
 
-    public OrderController(CreateOrderUseCase createOrderUseCase) {
+    public OrderController(CreateOrderUseCase createOrderUseCase,
+                           GetOrderUseCase getOrderUseCase,
+                           ListCurrentUserOrdersUseCase listCurrentUserOrdersUseCase) {
         this.createOrderUseCase = createOrderUseCase;
+        this.getOrderUseCase = getOrderUseCase;
+        this.listCurrentUserOrdersUseCase = listCurrentUserOrdersUseCase;
     }
 
     @PostMapping
@@ -37,9 +47,26 @@ public class OrderController {
 
         OrderDto orderDto = createOrderUseCase.createOrder(new CreateOrderCommand(
                 authentication.getName(),
-                lines
+                lines,
+                request.getPaymentMethodToken()
         ));
 
         return OrderResponse.fromDto(orderDto);
+    }
+
+    @GetMapping("/{orderId}")
+    public OrderResponse getOrder(@PathVariable String orderId, Authentication authentication) {
+        OrderDto orderDto = getOrderUseCase.getOrder(orderId, authentication.getName());
+        return OrderResponse.fromDto(orderDto);
+    }
+
+    @GetMapping
+    public List<OrderResponse> listMyOrders(Authentication authentication) {
+        List<OrderDto> orders = listCurrentUserOrdersUseCase.listCurrentUserOrders(authentication.getName());
+        List<OrderResponse> responses = new ArrayList<OrderResponse>();
+        for (OrderDto order : orders) {
+            responses.add(OrderResponse.fromDto(order));
+        }
+        return responses;
     }
 }

@@ -106,21 +106,95 @@ curl.exe -i -u "user@example.com:Password123!" "http://localhost:8080/api/v1/pay
 curl.exe http://localhost:8080/api/v1/products
 ```
 
-2. Create order:
+2. Create order with authorized payment:
 
 ```bash
-curl.exe -i -X POST "http://localhost:8080/api/v1/orders" -u "user@example.com:Password123!" -H "Content-Type: application/json" -d "{\"lines\":[{\"productId\":\"{productIdFromCatalog}\",\"quantity\":2}]}"
+curl.exe -i -X POST "http://localhost:8080/api/v1/orders" -u "user@example.com:Password123!" -H "Content-Type: application/json" -d "{\"paymentMethodToken\":\"stub-ok\",\"lines\":[{\"productId\":\"{productIdFromCatalog}\",\"quantity\":2}]}"
 ```
 
 Expected:
 
 - HTTP 201
-- `status` = `CREATED`
+- `status` = `PAID`
+- `paymentStatus` = `AUTHORIZED`
 - `totalAmount` calculated from unit price * quantity
 - lines include product `sku` and `productName`
 
+3. Create order with rejected payment:
+
+```bash
+curl.exe -i -X POST "http://localhost:8080/api/v1/orders" -u "user@example.com:Password123!" -H "Content-Type: application/json" -d "{\"paymentMethodToken\":\"reject\",\"lines\":[{\"productId\":\"{productIdFromCatalog}\",\"quantity\":1}]}"
+```
+
+Expected:
+
+- HTTP 201
+- `status` = `PAYMENT_REJECTED`
+- `paymentStatus` = `REJECTED`
+- `paymentRejectionReason` present
+
 Notes:
 
-- Payment not connected yet in EGA-337.
-- Payment connection comes in EGA-338.
+- Payment provider is local stub only.
+- No real provider calls.
+- No card numbers used/stored.
 - Endpoint requires USER or ADMIN auth.
+
+## Get My Order History (Authenticated USER/ADMIN)
+
+```bash
+curl.exe -i -u "user@example.com:Password123!" "http://localhost:8080/api/v1/orders"
+```
+
+Expected:
+
+- HTTP 200
+- JSON array contains only current user orders
+- Each item includes `id`, `status`, `totalAmount`, `totalCurrency`, `lines`, and payment fields
+
+## Get Order Detail (Authenticated USER/ADMIN)
+
+```bash
+curl.exe -i -u "user@example.com:Password123!" "http://localhost:8080/api/v1/orders/{orderId}"
+```
+
+Expected:
+
+- HTTP 200 for own order
+- Body includes `id`, `status`, `totalAmount`, `totalCurrency`, `lines`, `paymentStatus`
+- Cross-user access denied (`403`)
+- Anonymous access denied (`401`)
+
+Notes:
+
+- Users can view only own orders.
+- Admin all-orders view available at `GET /api/v1/admin/orders`.
+
+## Admin List All Orders (ADMIN Role Required)
+
+```bash
+curl.exe -i -u "admin@example.com:Admin123!" "http://localhost:8080/api/v1/admin/orders"
+```
+
+Expected `200 OK` body sample:
+
+```json
+[
+  {
+    "id": "order-123",
+    "customerEmail": "user@example.com",
+    "status": "PAID",
+    "totalAmount": 1299.00,
+    "totalCurrency": "EUR",
+    "createdAt": "2026-05-08T12:00:00Z",
+    "paymentStatus": "AUTHORIZED",
+    "paymentId": "pay-1",
+    "paymentReference": "ref-1"
+  }
+]
+```
+
+- Requires `ADMIN` role.
+- `USER` gets `403 Forbidden`.
+- Anonymous gets `401 Unauthorized`.
+- User self-service history remains `GET /api/v1/orders`.

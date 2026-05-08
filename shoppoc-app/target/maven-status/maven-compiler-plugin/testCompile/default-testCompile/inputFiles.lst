@@ -1,6 +1,9 @@
+C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\app\security\AdminOrderVisibilityIntegrationTest.java
 C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\architecture\ModuleDependencyRulesTest.java
 C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\app\security\AuthControllerIntegrationTest.java
 C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\app\security\SecurityAccessIntegrationTest.java
+C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\order\infrastructure\web\AdminOrderControllerTest.java
+C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\app\security\OrderPaymentIntegrationTest.java
 C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\app\web\GlobalExceptionHandlerTest.java
 C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\payment\infrastructure\web\PaymentControllerTest.java
 C:\Users\abmor\Desktop\shopPoc\shoppoc-app\src\test\java\com\shoppoc\user\infrastructure\web\UserProfileControllerTest.java

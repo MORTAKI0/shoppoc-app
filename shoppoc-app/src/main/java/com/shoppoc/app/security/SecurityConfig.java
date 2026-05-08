@@ -33,7 +33,7 @@ public class SecurityConfig {
                 .antMatchers("/api/v1/admin/**").hasRole("ADMIN")
                 .antMatchers(HttpMethod.GET, "/api/v1/users/me").authenticated()
                 .antMatchers(HttpMethod.POST, "/api/v1/orders").hasAnyRole("USER", "ADMIN")
-                .antMatchers("/api/v1/orders/**").authenticated()
+                .antMatchers(HttpMethod.GET, "/api/v1/orders", "/api/v1/orders/**").hasAnyRole("USER", "ADMIN")
                 .antMatchers(HttpMethod.POST, "/api/v1/payments/authorize").hasAnyRole("USER", "ADMIN")
                 .antMatchers(HttpMethod.GET, "/api/v1/payments/**").hasAnyRole("USER", "ADMIN")
                 .anyRequest().authenticated()

@@ -7,7 +7,9 @@ com\shoppoc\app\security\SecurityAccessIntegrationTest.class
 com\shoppoc\app\web\GlobalExceptionHandlerTest$TestController.class
 com\shoppoc\architecture\ModuleDependencyRulesTest.class
 com\shoppoc\catalog\CatalogLocalSeedDataTest.class
+com\shoppoc\app\security\OrderPaymentIntegrationTest.class
 com\shoppoc\app\ShopPocApplicationContextTest.class
+com\shoppoc\order\infrastructure\web\AdminOrderControllerTest.class
 com\shoppoc\app\web\GlobalExceptionHandlerTest.class
 com\shoppoc\user\infrastructure\web\UserProfileControllerTest.class
 com\shoppoc\user\infrastructure\web\UserRegistrationControllerTest.class
@@ -15,5 +17,6 @@ com\shoppoc\architecture\ControllerRulesTest$1.class
 com\shoppoc\payment\infrastructure\web\PaymentControllerTest.class
 com\shoppoc\app\web\GlobalExceptionHandlerTest$ValidateRequest.class
 com\shoppoc\architecture\ControllerRulesTest.class
+com\shoppoc\app\security\AdminOrderVisibilityIntegrationTest.class
 com\shoppoc\app\security\AuthControllerIntegrationTest.class
 com\shoppoc\catalog\infrastructure\web\AdminProductControllerTest.class
