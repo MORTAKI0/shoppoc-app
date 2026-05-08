@@ -1,6 +1,9 @@
 com\shoppoc\order\application\OrderApplicationServiceAdminTest.class
-com\shoppoc\order\application\OrderApplicationServiceTest.class
 com\shoppoc\order\infrastructure\persistence\JpaOrderRepositoryAdapterTest.class
 com\shoppoc\order\application\OrderApplicationServiceAdminTest$InMemoryOrderRepository.class
 com\shoppoc\order\OrderTestApplication.class
+com\shoppoc\order\notification\infrastructure\persistence\JpaNotificationRepositoryAdapterTest.class
+com\shoppoc\order\application\OrderApplicationServiceTest.class
+com\shoppoc\order\notification\domain\RecordedNotificationTest.class
+com\shoppoc\order\notification\application\NotificationRecordingServiceTest.class
 com\shoppoc\order\domain\OrderTest.class

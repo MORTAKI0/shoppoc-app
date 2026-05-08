@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.shoppoc.order.domain.OrderTest
 -------------------------------------------------------------------------------
-Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in com.shoppoc.order.domain.OrderTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.shoppoc.order.domain.OrderTest

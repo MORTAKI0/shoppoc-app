@@ -5,6 +5,7 @@ import com.shoppoc.catalog.api.ProductLookupPort;
 import com.shoppoc.order.api.AdminOrderSummaryDto;
 import com.shoppoc.order.api.OrderDto;
 import com.shoppoc.order.api.OrderLineDto;
+import com.shoppoc.order.notification.application.NotificationRecorder;
 import com.shoppoc.payment.api.PaymentAuthorizationPort;
 import com.shoppoc.payment.api.PaymentAuthorizationRequest;
 import com.shoppoc.payment.api.PaymentDto;
@@ -31,13 +32,16 @@ public class OrderApplicationService implements CreateOrderUseCase, GetOrderUseC
     private final OrderRepository orderRepository;
     private final ProductLookupPort productLookupPort;
     private final PaymentAuthorizationPort paymentAuthorizationPort;
+    private final NotificationRecorder notificationRecorder;
 
     public OrderApplicationService(OrderRepository orderRepository,
                                    ProductLookupPort productLookupPort,
-                                   PaymentAuthorizationPort paymentAuthorizationPort) {
+                                   PaymentAuthorizationPort paymentAuthorizationPort,
+                                   NotificationRecorder notificationRecorder) {
         this.orderRepository = orderRepository;
         this.productLookupPort = productLookupPort;
         this.paymentAuthorizationPort = paymentAuthorizationPort;
+        this.notificationRecorder = notificationRecorder;
     }
 
     @Override
@@ -88,6 +92,11 @@ public class OrderApplicationService implements CreateOrderUseCase, GetOrderUseC
         }
 
         Order saved = orderRepository.save(paymentUpdated);
+        if ("AUTHORIZED".equalsIgnoreCase(payment.getStatus())) {
+            notificationRecorder.recordPaymentAuthorized(saved.getCustomerEmail(), saved.getId().value(), payment.getId());
+        } else {
+            notificationRecorder.recordPaymentRejected(saved.getCustomerEmail(), saved.getId().value(), payment.getId(), payment.getRejectionReason());
+        }
         return toDto(saved);
     }
 

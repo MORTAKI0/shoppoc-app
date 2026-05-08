@@ -8,6 +8,7 @@ import com.shoppoc.order.domain.OrderLine;
 import com.shoppoc.order.domain.Quantity;
 import com.shoppoc.order.domain.Order;
 import com.shoppoc.order.domain.OrderRepository;
+import com.shoppoc.order.notification.application.NotificationRecorder;
 import com.shoppoc.payment.api.PaymentAuthorizationPort;
 import com.shoppoc.payment.api.PaymentAuthorizationRequest;
 import com.shoppoc.payment.api.PaymentDto;
@@ -33,16 +34,19 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.times;
 
 class OrderApplicationServiceTest {
 
     private final OrderRepository orderRepository = mock(OrderRepository.class);
     private final ProductLookupPort productLookupPort = mock(ProductLookupPort.class);
     private final PaymentAuthorizationPort paymentAuthorizationPort = mock(PaymentAuthorizationPort.class);
+    private final NotificationRecorder notificationRecorder = mock(NotificationRecorder.class);
     private final OrderApplicationService service = new OrderApplicationService(
             orderRepository,
             productLookupPort,
-            paymentAuthorizationPort
+            paymentAuthorizationPort,
+            notificationRecorder
     );
 
     @Test
@@ -63,6 +67,7 @@ class OrderApplicationServiceTest {
         assertEquals("ref-1", result.getPaymentReference());
         assertEquals("AUTHORIZED", result.getPaymentStatus());
         assertEquals(new BigDecimal("20.00"), result.getTotalAmount());
+        verify(notificationRecorder, times(1)).recordPaymentAuthorized(eq("user@example.com"), eq(result.getId()), eq("pay-1"));
     }
 
     @Test
@@ -83,6 +88,7 @@ class OrderApplicationServiceTest {
         assertEquals("ref-2", result.getPaymentReference());
         assertEquals("REJECTED", result.getPaymentStatus());
         assertTrue(result.getPaymentRejectionReason().contains("rejected"));
+        verify(notificationRecorder, times(1)).recordPaymentRejected(eq("user@example.com"), eq(result.getId()), eq("pay-2"), eq("Payment rejected by local stub token"));
     }
 
     @Test
@@ -118,6 +124,8 @@ class OrderApplicationServiceTest {
         )));
 
         verify(paymentAuthorizationPort, never()).authorize(any(PaymentAuthorizationRequest.class));
+        verify(notificationRecorder, never()).recordPaymentAuthorized(any(), any(), any());
+        verify(notificationRecorder, never()).recordPaymentRejected(any(), any(), any(), any());
     }
 
     @Test
@@ -127,6 +135,8 @@ class OrderApplicationServiceTest {
                 Collections.<CreateOrderLineCommand>emptyList(),
                 "stub-ok"
         )));
+        verify(notificationRecorder, never()).recordPaymentAuthorized(any(), any(), any());
+        verify(notificationRecorder, never()).recordPaymentRejected(any(), any(), any(), any());
     }
 
     @Test

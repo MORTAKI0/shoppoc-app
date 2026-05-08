@@ -8,6 +8,7 @@ import com.shoppoc.order.domain.OrderLine;
 import com.shoppoc.order.domain.OrderRepository;
 import com.shoppoc.order.domain.OrderStatus;
 import com.shoppoc.order.domain.Quantity;
+import com.shoppoc.order.notification.application.NotificationRecorder;
 import com.shoppoc.payment.api.PaymentAuthorizationPort;
 import com.shoppoc.shared.money.Money;
 import org.junit.jupiter.api.Test;
@@ -73,7 +74,8 @@ class OrderApplicationServiceAdminTest {
     private OrderApplicationService service(OrderRepository repository) {
         ProductLookupPort productLookupPort = mock(ProductLookupPort.class);
         PaymentAuthorizationPort paymentAuthorizationPort = mock(PaymentAuthorizationPort.class);
-        return new OrderApplicationService(repository, productLookupPort, paymentAuthorizationPort);
+        NotificationRecorder notificationRecorder = mock(NotificationRecorder.class);
+        return new OrderApplicationService(repository, productLookupPort, paymentAuthorizationPort, notificationRecorder);
     }
 
     private Order sampleOrder(String id,

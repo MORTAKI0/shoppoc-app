@@ -198,3 +198,22 @@ Expected `200 OK` body sample:
 - `USER` gets `403 Forbidden`.
 - Anonymous gets `401 Unauthorized`.
 - User self-service history remains `GET /api/v1/orders`.
+
+## In-Process Notification Recording
+
+- Creating order with `paymentMethodToken="stub-ok"` records `ORDER_PAYMENT_AUTHORIZED` notification.
+- Creating order with `paymentMethodToken="reject"` records `ORDER_PAYMENT_REJECTED` notification.
+- Notifications stored in local DB only.
+- No email sent.
+- No Kafka/RabbitMQ used.
+- No real provider credentials needed.
+
+Optional local H2 check:
+
+- H2 console: `/h2-console`
+- JDBC URL: use current local app config
+- Query:
+
+```sql
+SELECT * FROM NOTIFICATIONS;
+```
