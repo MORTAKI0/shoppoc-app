@@ -16,6 +16,7 @@ com\shoppoc\payment\infrastructure\web\PaymentControllerTest.class
 com\shoppoc\app\security\AdminOrderVisibilityIntegrationTest.class
 com\shoppoc\TestWebMvcApplication.class
 com\shoppoc\architecture\ForbiddenSourcePatternsTest.class
+com\shoppoc\architecture\SpringBootMajorVersion.class
 com\shoppoc\app\security\NotificationRecordingIntegrationTest.class
 com\shoppoc\app\web\GlobalExceptionHandlerTest$TestController.class
 com\shoppoc\catalog\CatalogLocalSeedDataTest.class
